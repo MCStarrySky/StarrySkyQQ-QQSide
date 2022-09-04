@@ -44,7 +44,7 @@ object StarrySkyQQ : KotlinPlugin(
             if (group.id == 818114237L) {
                 val message = message.content
                 try {
-                    if (DatabaseCache.INSTANCE.has(message.toInt())) {
+                    if (!DatabasePlayer.INSTANCE.has(sender.id) && DatabaseCache.INSTANCE.has(message.toInt())) {
                         val user = DatabaseCache.INSTANCE.get(message.toInt())!!
                         val time = System.currentTimeMillis()
                         DatabasePlayer.INSTANCE.insert(user, sender.id, time)

@@ -45,6 +45,10 @@ class DatabasePlayer {
         }
     }
 
+    fun has(qq: Long): Boolean {
+        return table.find(dataSource) { where { "qq" eq qq } }
+    }
+
     companion object {
 
         val INSTANCE = DatabasePlayer()

@@ -1,7 +1,6 @@
 package com.mcstarrysky.starryskyqq.database
 
-import com.mcstarrysky.starryskyqq.StarrySkyQQ
-import taboolib.common.platform.ProxyPlayer
+import com.mcstarrysky.starryskyqq.ConfigReader
 import taboolib.module.database.ColumnOptionSQL
 import taboolib.module.database.ColumnTypeSQL
 import taboolib.module.database.HostSQL
@@ -14,7 +13,7 @@ import java.util.*
  */
 class DatabasePlayer {
 
-    private val host = HostSQL(StarrySkyQQ.conf.getConfigurationSection("data.mysql")!!)
+    private val host = HostSQL(ConfigReader.conf.getConfigurationSection("data.mysql")!!)
 
     private val table = Table("starryskyqq_player", host) {
         add("user") {

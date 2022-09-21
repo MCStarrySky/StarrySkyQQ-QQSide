@@ -1,13 +1,11 @@
 package com.mcstarrysky.starryskyqq.database
 
-import com.mcstarrysky.starryskyqq.StarrySkyQQ
-import taboolib.common.platform.ProxyPlayer
+import com.mcstarrysky.starryskyqq.ConfigReader
 import taboolib.module.database.ColumnOptionSQL
 import taboolib.module.database.ColumnTypeSQL
 import taboolib.module.database.HostSQL
 import taboolib.module.database.Table
 import java.util.UUID
-import kotlin.random.Random
 
 /**
  * @author xiaomu
@@ -15,7 +13,7 @@ import kotlin.random.Random
  */
 class DatabaseCache {
 
-    private val host = HostSQL(StarrySkyQQ.conf.getConfigurationSection("data.mysql")!!)
+    private val host = HostSQL(ConfigReader.conf.getConfigurationSection("data.mysql")!!)
 
     private val table = Table("starryskyqq_cache", host) {
         add("code") {
